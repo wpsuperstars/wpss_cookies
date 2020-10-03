@@ -10,12 +10,18 @@ Domain Path: /lang
 Text Domain: wpss
 */
 
-defined('ABSPATH') or die('Oooooh Boy...');
+// Prevents errors if called directly
+if(!function_exists('add_action')){
+    echo "Don't call me directly, i don't exist...";
+    exit;
+}
 
+// Plugin constants
 define("_WPSS_PLUGIN_URL", plugin_dir_url(__FILE__));
 define("_WPSS_PLUGIN_DIR", plugin_dir_path(__FILE__));
 define("_WPSS_PLUGIN_VERSION", 20201002);
 
+// Admin Class
 if(!class_exists('WPSSCookiesAdmin')){
     if(is_admin()){
         require_once 'core/WPSSCookiesAdmin.php';
@@ -23,4 +29,10 @@ if(!class_exists('WPSSCookiesAdmin')){
         register_activation_hook(__FILE__, array('WPSSCookiesAdmin', 'wpss_on_plugin_activate'));
         register_deactivation_hook(__FILE__, array('WPSSCookiesAdmin', 'wpss_on_plugin_deactivate'));
     }
+}
+
+// Frontend Class
+if(!class_exists('WPSScookies')){
+    require_once 'core/WPSScookies.php';
+    new WPSScookies();
 }
