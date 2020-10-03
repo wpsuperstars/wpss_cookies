@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WPSS Cookies Consent
-Plugin URI: https://angelorocha.com.br
+Plugin URI: https://github.com/wpsuperstars/wpss_cookies
 Description: A simple way to add a cookie consent message in your WordPress
 Version: 1.0.0
 Author: Angelo Rocha
