@@ -218,7 +218,7 @@ final class WPSSCookiesAdmin{
      * Get plugin admin scripts
      */
     public function wpss_plugin_admin_scripts(){
-        if($_GET['page'] === 'wpss-cookies-consent'):
+        if(isset($_GET['page']) && $_GET['page'] === 'wpss-cookies-consent'):
             wp_enqueue_style('wpss-cookie-admin', _WPSS_PLUGIN_URL . 'assets/css/wpss-cookie-admin.css', '', _WPSS_PLUGIN_VERSION, 'all');
         endif;
     }
