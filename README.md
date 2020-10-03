@@ -1,2 +1,2 @@
-# wpss_cookies
-Simple and functional
+# WPSS Cookies Consent
+## Simple and functional
