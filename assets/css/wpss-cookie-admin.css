@@ -10,9 +10,6 @@
  * @since 1.0.0
  */
 
-#wpbody, #wpcontent {background: #32373C; overflow: hidden;}
-#wpcontent:after{content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #32373C; z-index: -1;}
-
 .wpss-save-msg{
     margin: -10px;
 }
@@ -28,7 +25,7 @@
 .wpss-container {
     background: #FFF;
     max-width: 660px;
-    margin: 50px auto;
+    margin: 20px 0 0 0;
     padding: 10px;
 }
 

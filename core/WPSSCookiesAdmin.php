@@ -1,13 +1,24 @@
 <?php
 /**
- * @author              Angelo Rocha
- * @author              Angelo Rocha <contato@angelorocha.com.br>
- * @link                https://angelorocha.com.br
- * @copyleft            2020
- * @license             GNU GPL 3 (https://www.gnu.org/licenses/gpl-3.0.html)
- * @package WordPress
- * @subpackage wpss_cookies
- * @since 1.0.0
+ * WPSS Cookie Consent
+ *
+ * @package           wpss_cookies
+ * @author            Angelo Rocha
+ * @copyleft          2020
+ * @license           GPL-3.0-or-later
+ *
+ * @wordpress-plugin
+ * Plugin Name:       WPSS Cookies Consent
+ * Plugin URI:        https://github.com/wpsuperstars/wpss_cookies
+ * Description:       A simple way to add a cookie consent message in your WordPress
+ * Version:           1.0.0
+ * Requires at least: 5.2
+ * Requires PHP:      7.2
+ * Author:            Angelo Rocha
+ * Author URI:        https://angelorocha.com.br
+ * Text Domain:       wpss
+ * License:           GNU General Public License v3 or later
+ * License URI:       /LICENSE
  */
 
 final class WPSSCookiesAdmin{
@@ -31,7 +42,7 @@ final class WPSSCookiesAdmin{
             'wpss-cookies-consent',
             array($this, 'wpss_plugin_menu_content'),
             _WPSS_PLUGIN_URL . "assets/images/plugin-ico.png",
-            5
+            75
         );
     }
 
@@ -208,7 +219,6 @@ final class WPSSCookiesAdmin{
      */
     public function wpss_plugin_admin_scripts(){
         if($_GET['page'] === 'wpss-cookies-consent'):
-            wp_enqueue_script('wpss-cookie-admin', _WPSS_PLUGIN_URL . 'assets/js/wpss-cookie-admin.js', array('jquery'), _WPSS_PLUGIN_VERSION, true);
             wp_enqueue_style('wpss-cookie-admin', _WPSS_PLUGIN_URL . 'assets/css/wpss-cookie-admin.css', '', _WPSS_PLUGIN_VERSION, 'all');
         endif;
     }

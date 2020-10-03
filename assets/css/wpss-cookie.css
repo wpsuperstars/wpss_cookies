@@ -9,3 +9,106 @@
  * @subpackage wpss_cookies
  * @since 1.0.0
  */
+
+.wpss-cookie-message {
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+}
+.wpss-container {
+    max-width: 1170px;
+    padding: 15px;
+    margin: 0 auto 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.wpss-container-message {
+    max-width: 85%;
+    padding-right: 20px;
+    text-align: justify;
+}
+
+.wpss-container-button {
+    max-width: 15%;
+    text-align: right;
+}
+
+.wpss-button-accept {
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    border: 0;
+    transition: 300ms;
+}
+
+.wpss-cookie-message.wpss_ocean {
+    background-color: #3185FC;
+    color: #0B4F6C;
+    border-color: #403F4C;
+}
+.wpss-cookie-message.wpss_ocean .wpss-button-accept {
+    background-color: #403F4C;
+    color: #FFF;
+}
+
+.wpss-cookie-message.wpss_light {
+    background-color: #FBFBFF;
+    color: #0B4F6C;
+    border-color: #01BAEF;
+}
+.wpss-cookie-message.wpss_light .wpss-button-accept {
+    background-color: #01BAEF;
+    color: #FFF;
+}
+
+.wpss-cookie-message.wpss_forest {
+    background-color: #5EF38C;
+    color: #2B9720;
+    border-color: #266447;
+}
+.wpss-cookie-message.wpss_forest .wpss-button-accept {
+    background-color: #266447;
+    color: #FFF;
+}
+
+.wpss-cookie-message .wpss-button-accept:hover,
+.wpss-cookie-message .wpss-button-accept:focus {
+    text-decoration: none;
+    outline: none;
+    background-color: #0B0B0B;
+}
+
+.wpss-cookie-message.wpss_top {
+    top: 0;
+    border-bottom-width: 5px;
+    border-bottom-style: solid;
+}
+
+.wpss-cookie-message.wpss_bottom {
+    bottom: 0;
+    border-top-width: 5px;
+    border-top-style: solid;
+}
+
+.wpss-hide-message{
+    display: none;
+}
+
+.wpss-loading-btn{
+    background: url("../images/load.png") 0.5rem center no-repeat;
+}
+
+@media (min-width: 320px) and (max-width: 640px) {
+    .wpss-container {
+        display: block;
+    }
+    .wpss-container-message {
+        max-width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    .wpss-container-button {
+        max-width: 100%;
+        text-align: center;
+    }
+}
