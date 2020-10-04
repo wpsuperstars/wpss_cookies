@@ -186,7 +186,7 @@ final class WPSSCookiesAdmin{
     /**
      * Plugin activate hook
      */
-    public function wpss_on_plugin_activate(){
+    public static function wpss_on_plugin_activate(){
         $accept  = __('Accept', 'wpss');
         $message = __('We use cookies to provide our services and for analytics and marketing. To find out more about our use of cookies, please see our Privacy Policy. By continuing to browse our website, you agree to our use of cookies.', 'wpss');
         add_option('wpss_show_cookie_message', '0');
@@ -199,7 +199,7 @@ final class WPSSCookiesAdmin{
     /**
      * Plugin deactivate hook
      */
-    public function wpss_on_plugin_deactivate(){
+    public static function wpss_on_plugin_deactivate(){
         delete_option('wpss_show_cookie_message');
         delete_option('wpss_message_position');
         delete_option('wpss_message_style');

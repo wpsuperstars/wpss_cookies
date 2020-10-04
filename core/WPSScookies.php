@@ -119,7 +119,7 @@ final class WPSScookies{
     /**
      * Set cookie
      */
-    public function wpss_set_plugin_cookie(){
+    public static function wpss_set_plugin_cookie(){
         check_ajax_referer('wpss_cookie_secure_request', 'security');
         setcookie(self::$cookie_name, self::$cookie_value, time() + self::$cookie_time, '/');
         exit;
