@@ -8,7 +8,7 @@
  * @license           GPL-3.0-or-later
  *
  * @wordpress-plugin
- * Plugin Name:       WPSS Cookies Consent
+ * Plugin Name:       WPSS Cookies
  * Plugin URI:        https://github.com/wpsuperstars/wpss_cookies
  * Description:       A simple way to add a cookie consent message in your WordPress
  * Version:           1.0.0
@@ -36,12 +36,12 @@ final class WPSSCookiesAdmin{
      */
     public function wpss_plugin_menu_page(){
         add_menu_page(
-            __('Cookies Consent', 'wpss'),
-            __('Cookies Consent', 'wpss'),
+            __('Cookies Consent', 'wpss-cookies'),
+            __('Cookies Consent', 'wpss-cookies'),
             'administrator',
             'wpss-cookies-consent',
             array($this, 'wpss_plugin_menu_content'),
-            _WPSS_PLUGIN_URL . "assets/images/plugin-ico.png",
+            WPSS_COOKIES_PLUGIN_URL . "assets/images/plugin-ico.png",
             75
         );
     }
@@ -50,8 +50,8 @@ final class WPSSCookiesAdmin{
      * Plugin admin page frontend
      */
     public function wpss_plugin_menu_content(){
-        $plugin_title    = __('Cookie Consent Option', 'wpss');
-        $message_label   = __('Edit Message', 'wpss');
+        $plugin_title    = __('Cookie Consent Option', 'wpss-cookies');
+        $message_label   = __('Edit Message', 'wpss-cookies');
         $editor_settings = array('media_buttons' => false, 'quicktags' => false, 'textarea_rows' => get_option('default_post_edit_rows', 5));
         echo "<div class='wpss-container'>";
         echo "<div class='wpss-save-msg'>";
@@ -68,7 +68,7 @@ final class WPSSCookiesAdmin{
         echo "<label for='wpss_cookie_message'>$message_label</label>";
         wp_editor(get_option('wpss_cookie_message'), 'wpss_cookie_message', $editor_settings);
 
-        submit_button(__('Update Settings', 'wpss'));
+        submit_button(__('Update Settings', 'wpss-cookies'));
 
         echo "</form>";
         echo "</div>";
@@ -107,9 +107,9 @@ final class WPSSCookiesAdmin{
      * Enable cookie message field
      */
     public function wpss_show_message_field(){
-        $enable_label = __('Enable Cookie Consent', 'wpss');
-        $op_on        = __('Yes', 'wpss');
-        $op_off       = __('No', 'wpss');
+        $enable_label = __('Enable Cookie Consent', 'wpss-cookies');
+        $op_on        = __('Yes', 'wpss-cookies');
+        $op_off       = __('No', 'wpss-cookies');
         echo "<div class='wpss-input-group'>";
         echo "<h3>$enable_label</h3>";
         echo "<label for='wpss_show_cookie_message_yes'>";
@@ -123,9 +123,9 @@ final class WPSSCookiesAdmin{
      * Message position field
      */
     public function wpss_message_position_field(){
-        $position_label = __('Message Position', 'wpss');
-        $op_top         = __('Top', 'wpss');
-        $op_bottom      = __('Bottom', 'wpss');
+        $position_label = __('Message Position', 'wpss-cookies');
+        $op_top         = __('Top', 'wpss-cookies');
+        $op_bottom      = __('Bottom', 'wpss-cookies');
         echo "<div class='wpss-input-group'>";
         echo "<h3>$position_label</h3>";
         echo "<label for='wpss_message_position_top'>";
@@ -140,9 +140,9 @@ final class WPSSCookiesAdmin{
      */
     public function wpss_message_style_field(){
         $style_label = __('Message Style', 'wpss');
-        $ocean_op    = _WPSS_PLUGIN_URL . "assets/images/ocean_op.png";
-        $light_op    = _WPSS_PLUGIN_URL . "assets/images/light_op.png";
-        $forest_op   = _WPSS_PLUGIN_URL . "assets/images/forest_op.png";
+        $ocean_op    = WPSS_COOKIES_PLUGIN_URL . "assets/images/ocean_op.png";
+        $light_op    = WPSS_COOKIES_PLUGIN_URL . "assets/images/light_op.png";
+        $forest_op   = WPSS_COOKIES_PLUGIN_URL . "assets/images/forest_op.png";
         echo "<div class='wpss-input-group'>";
         echo "<h3>$style_label</h3>";
         echo "<div class='wpss-radio-image-inline'>";
@@ -160,7 +160,7 @@ final class WPSSCookiesAdmin{
      * Button text field
      */
     public function wpss_message_button_field(){
-        $button_label = __('Button Label', 'wpss');
+        $button_label = __('Button Label', 'wpss-cookies');
         $button_text  = get_option('wpss_button_text');
         echo "<div class='wpss-input-group'>";
         echo "<label for='wpss_button_text'><h3>$button_label</h3></label>";
@@ -187,8 +187,8 @@ final class WPSSCookiesAdmin{
      * Plugin activate hook
      */
     public static function wpss_on_plugin_activate(){
-        $accept  = __('Accept', 'wpss');
-        $message = __('We use cookies to provide our services and for analytics and marketing. To find out more about our use of cookies, please see our Privacy Policy. By continuing to browse our website, you agree to our use of cookies.', 'wpss');
+        $accept  = __('Accept', 'wpss-cookies');
+        $message = __('We use cookies to provide our services and for analytics and marketing. To find out more about our use of cookies, please see our Privacy Policy. By continuing to browse our website, you agree to our use of cookies.', 'wpss-cookies');
         add_option('wpss_show_cookie_message', '0');
         add_option('wpss_message_position', 'bottom');
         add_option('wpss_message_style', 'wpss_ocean');
@@ -211,7 +211,7 @@ final class WPSSCookiesAdmin{
      * Plugin internationalization
      */
     public function wpss_load_plugin_textdomain(){
-        load_plugin_textdomain('wpss', false, _WPSS_PLUGIN_DIR . 'lang');
+        load_plugin_textdomain('wpss', false, WPSS_COOKIES_PLUGIN_DIR . 'lang');
     }
 
     /**
@@ -219,7 +219,7 @@ final class WPSSCookiesAdmin{
      */
     public function wpss_plugin_admin_scripts(){
         if(isset($_GET['page']) && $_GET['page'] === 'wpss-cookies-consent'):
-            wp_enqueue_style('wpss-cookie-admin', _WPSS_PLUGIN_URL . 'assets/css/wpss-cookie-admin.css', '', _WPSS_PLUGIN_VERSION, 'all');
+            wp_enqueue_style('wpss-cookie-admin', WPSS_COOKIES_PLUGIN_URL . 'assets/css/wpss-cookie-admin.css', '', WPSS_COOKIES_PLUGIN_VERSION, 'all');
         endif;
     }
 }

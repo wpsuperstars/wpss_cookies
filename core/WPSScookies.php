@@ -129,7 +129,7 @@ final class WPSScookies{
      * Get plugin scripts
      */
     public function wpss_plugin_scripts(){
-        wp_enqueue_script('wpss-cookie', _WPSS_PLUGIN_URL . 'assets/js/wpss-cookie.js', array('jquery'), _WPSS_PLUGIN_VERSION, true);
-        wp_enqueue_style('wpss-cookie', _WPSS_PLUGIN_URL . 'assets/css/wpss-cookie.css', '', _WPSS_PLUGIN_VERSION, 'all');
+        wp_enqueue_script('wpss-cookie', WPSS_COOKIES_PLUGIN_URL . 'assets/js/wpss-cookie.js', array('jquery'), WPSS_COOKIES_PLUGIN_VERSION, true);
+        wp_enqueue_style('wpss-cookie', WPSS_COOKIES_PLUGIN_URL . 'assets/css/wpss-cookie.css', '', WPSS_COOKIES_PLUGIN_VERSION, 'all');
     }
 }
