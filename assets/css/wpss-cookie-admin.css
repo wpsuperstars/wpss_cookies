@@ -82,6 +82,7 @@
     white-space: nowrap;
     transform: rotate(90deg);
     transform-origin: top left;
+    transition: 300ms;
 }
 .wpss-social-links ul {
     margin: 0;
@@ -131,4 +132,9 @@
 }
 .wpss-social-links ul > li.github > a {
     background-image: url("../images/github.png");
+}
+
+.wpss-social-fixed {
+    position: fixed;
+    transition: 300ms;
 }

@@ -267,6 +267,7 @@ final class WPSSCookiesAdmin{
     public function wpss_plugin_admin_scripts(){
         if(isset($_GET['page']) && $_GET['page'] === 'wpss-cookies-consent'):
             wp_enqueue_style('wpss-cookie-admin', WPSS_COOKIES_PLUGIN_URL . 'assets/css/wpss-cookie-admin.css', '', WPSS_COOKIES_PLUGIN_VERSION, 'all');
+            wp_enqueue_script('wpss-cookie-admin', WPSS_COOKIES_PLUGIN_URL . 'assets/js/wpss-cookie-admin.js', '', WPSS_COOKIES_PLUGIN_VERSION, 'all');
         endif;
     }
 }
