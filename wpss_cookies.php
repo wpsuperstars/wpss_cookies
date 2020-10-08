@@ -3,7 +3,7 @@
 Plugin Name: WPSS Cookies Consent (GDPR/CCPA)
 Plugin URI: https://github.com/wpsuperstars/wpss_cookies
 Description: A simple way to add a cookie consent message in your WordPress
-Version: 1.3
+Version: 1.3.1
 Requires at least: 5.2
 Requires PHP: 7.2
 Author: Angelo Rocha
