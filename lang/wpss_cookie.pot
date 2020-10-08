@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSS Cookies\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/cmb2\n"
-"POT-Creation-Date: 2020-10-07 21:44-0300\n"
+"POT-Creation-Date: 2020-10-08 19:35-0300\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,55 +35,71 @@ msgstr ""
 msgid "Edit Message"
 msgstr ""
 
-#: core/WPSSCookiesAdmin.php:73
+#: core/WPSSCookiesAdmin.php:74
 msgid "Update Settings"
 msgstr ""
 
-#: core/WPSSCookiesAdmin.php:99
+#: core/WPSSCookiesAdmin.php:101
 msgid "Stay in touch"
 msgstr ""
 
-#: core/WPSSCookiesAdmin.php:131
+#: core/WPSSCookiesAdmin.php:133
 msgid "Enable Cookie Consent"
 msgstr ""
 
-#: core/WPSSCookiesAdmin.php:132
+#: core/WPSSCookiesAdmin.php:134
 msgid "Yes"
 msgstr ""
 
-#: core/WPSSCookiesAdmin.php:133
+#: core/WPSSCookiesAdmin.php:135
 msgid "No"
 msgstr ""
 
-#: core/WPSSCookiesAdmin.php:147
+#: core/WPSSCookiesAdmin.php:149
 msgid "Message Position"
 msgstr ""
 
-#: core/WPSSCookiesAdmin.php:148
+#: core/WPSSCookiesAdmin.php:150
 msgid "Top"
 msgstr ""
 
-#: core/WPSSCookiesAdmin.php:149
+#: core/WPSSCookiesAdmin.php:151
 msgid "Bottom"
 msgstr ""
 
-#: core/WPSSCookiesAdmin.php:163
+#: core/WPSSCookiesAdmin.php:165
 msgid "Message Style"
 msgstr ""
 
-#: core/WPSSCookiesAdmin.php:193
+#: core/WPSSCookiesAdmin.php:195
 msgid "Button Label"
 msgstr ""
 
-#: core/WPSSCookiesAdmin.php:205
+#: core/WPSSCookiesAdmin.php:207
 msgid "Cookie Name"
 msgstr ""
 
-#: core/WPSSCookiesAdmin.php:235
+#: core/WPSSCookiesAdmin.php:219
+msgid "Cookie Lifetime"
+msgstr ""
+
+#: core/WPSSCookiesAdmin.php:220
+msgid "One Week"
+msgstr ""
+
+#: core/WPSSCookiesAdmin.php:221
+msgid "One Month"
+msgstr ""
+
+#: core/WPSSCookiesAdmin.php:222
+msgid "One Year"
+msgstr ""
+
+#: core/WPSSCookiesAdmin.php:255
 msgid "Accept"
 msgstr ""
 
-#: core/WPSSCookiesAdmin.php:236
+#: core/WPSSCookiesAdmin.php:256
 msgid ""
 "We use cookies to provide our services and for analytics and marketing. To find "
 "out more about our use of cookies, please see our Privacy Policy. By continuing "

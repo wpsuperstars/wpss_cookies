@@ -11,7 +11,7 @@
  * Plugin Name:       WPSS Cookies Consent
  * Plugin URI:        https://github.com/wpsuperstars/wpss_cookies
  * Description:       A simple way to add a cookie consent message in your WordPress
- * Version:           1.2
+ * Version:           1.3
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Angelo Rocha
@@ -121,7 +121,15 @@ final class WPSScookies{
      * @return false|mixed|string|void
      */
     public static function wpss_set_cookie_name(){
-        return $cookie_name = (get_option('wpss_cookie_name') ? get_option('wpss_cookie_name') : self::$cookie_name);
+        return (get_option('wpss_cookie_name') ? get_option('wpss_cookie_name') : self::$cookie_name);
+    }
+
+    /**
+     * Define cookie lifetime
+     * @return false|int|mixed|void
+     */
+    public static function wpss_set_cookie_lifetime(){
+        return (get_option('wpss_cookie_life') ? get_option('wpss_cookie_life') : self::$cookie_time);
     }
 
     /**
@@ -129,8 +137,7 @@ final class WPSScookies{
      */
     public static function wpss_set_plugin_cookie(){
         check_ajax_referer('wpss_cookie_secure_request', 'security');
-        setcookie(self::wpss_set_cookie_name(), self::$cookie_value, time() + self::$cookie_time, '/');
-        echo self::wpss_set_cookie_name();
+        setcookie(self::wpss_set_cookie_name(), self::$cookie_value, time() + self::wpss_set_cookie_lifetime(), '/');
         exit;
     }
 

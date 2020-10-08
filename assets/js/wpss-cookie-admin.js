@@ -1,5 +1,5 @@
 /**
- * Hide cookie message container
+ * Fixed admin social links bar
  */
 jQuery(function ($) {
     $(window).on('scroll', function () {

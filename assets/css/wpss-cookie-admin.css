@@ -56,7 +56,6 @@
 
 .wpss-radio-image-inline {
     margin: 0 -10px 0 -10px;
-    text-align: center;
 }
 
 .wpss-radio-image-inline label {
@@ -137,4 +136,8 @@
 .wpss-social-fixed {
     position: fixed;
     transition: 300ms;
+}
+
+.wpss-align-center{
+    text-align: center;
 }

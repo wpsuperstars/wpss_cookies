@@ -11,7 +11,7 @@
  * Plugin Name:       WPSS Cookies
  * Plugin URI:        https://github.com/wpsuperstars/wpss_cookies
  * Description:       A simple way to add a cookie consent message in your WordPress
- * Version:           1.2
+ * Version:           1.3
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Angelo Rocha
@@ -67,6 +67,7 @@ final class WPSSCookiesAdmin{
         self::wpss_message_style_field();
         self::wpss_message_button_field();
         self::wpss_cookie_name();
+        self::wpss_cookie_life_time();
         echo "<label for='wpss_cookie_message'>$message_label</label>";
         wp_editor(get_option('wpss_cookie_message'), 'wpss_cookie_message', $editor_settings);
 
@@ -85,6 +86,7 @@ final class WPSSCookiesAdmin{
         register_setting('wpss_cookie_options', 'wpss_message_style', self::wpss_sanitize_fields());
         register_setting('wpss_cookie_options', 'wpss_button_text', self::wpss_sanitize_fields());
         register_setting('wpss_cookie_options', 'wpss_cookie_name', self::wpss_sanitize_fields());
+        register_setting('wpss_cookie_options', 'wpss_cookie_life', self::wpss_sanitize_fields());
         register_setting('wpss_cookie_options', 'wpss_cookie_message', self::wpss_sanitize_fields(
             'string',
             'wp_kses_post'
@@ -167,7 +169,7 @@ final class WPSSCookiesAdmin{
         $solar_op    = WPSS_COOKIES_PLUGIN_URL . "assets/images/solar_op.png";
         $aqua_op     = WPSS_COOKIES_PLUGIN_URL . "assets/images/aqua_op.png";
         $midnight_op = WPSS_COOKIES_PLUGIN_URL . "assets/images/midnight_op.png";
-        echo "<div class='wpss-input-group'>";
+        echo "<div class='wpss-input-group wpss-align-center'>";
         echo "<h3>$style_label</h3>";
         echo "<div class='wpss-radio-image-inline'>";
         echo "<label for='wpss_message_style_ocean'>";
@@ -213,6 +215,24 @@ final class WPSSCookiesAdmin{
         echo "</div>";
     }
 
+    public function wpss_cookie_life_time(){
+        $cookie_time = __('Cookie Lifetime', 'wpss-cookies');
+        $week        = __('One Week', 'wpss-cookies');  // 604800 seconds
+        $month       = __('One Month', 'wpss-cookies'); // 2629746 seconds
+        $year        = __('One Year', 'wpss-cookies');  // 31556926 seconds
+        echo "<div class='wpss-input-group'>";
+        echo "<h3>$cookie_time</h3>";
+        echo "<div class='wpss-radio-image-inline'>";
+        echo "<label for='wpss_cookie_life_year'>";
+        echo "<input type='radio' name='wpss_cookie_life' id='wpss_cookie_life_year' value='31556926'" . self::wpss_radio_checked('31556926', 'wpss_cookie_life') . "> $year</label>";
+        echo "<label for='wpss_cookie_life_month'>";
+        echo "<input type='radio' name='wpss_cookie_life' id='wpss_cookie_life_month' value='2629746'" . self::wpss_radio_checked('2629746', 'wpss_cookie_life') . "> $month</label>";
+        echo "<label for='wpss_cookie_life_week'>";
+        echo "<input type='radio' name='wpss_cookie_life' id='wpss_cookie_life_week' value='604800'" . self::wpss_radio_checked('604800', 'wpss_cookie_life') . "> $week</label>";
+        echo "</div>";
+        echo "</div>";
+    }
+
     /***
      * Check current input radio value
      * @param $val
@@ -239,6 +259,7 @@ final class WPSSCookiesAdmin{
         add_option('wpss_message_style', 'wpss_ocean');
         add_option('wpss_button_text', $accept);
         add_option('wpss_cookie_name', 'wpss_cookie_accepted');
+        add_option('wpss_cookie_life', '31556926');
         add_option('wpss_cookie_message', $message);
     }
 
@@ -251,6 +272,7 @@ final class WPSSCookiesAdmin{
         delete_option('wpss_message_style');
         delete_option('wpss_button_text');
         delete_option('wpss_cookie_name');
+        delete_option('wpss_cookie_life');
         delete_option('wpss_cookie_message');
     }
 

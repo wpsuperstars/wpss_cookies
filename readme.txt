@@ -1,11 +1,11 @@
 === WPSS Cookies ===
 Contributors: angelorocha
 Donate link: https://github.com/angelorocha/superstar
-Tags: cookies, cookie, gdpr, ccpa, consent-cookie, cookie-message, accept-cookies
+Tags: cookies, cookie, gdpr, ccpa, consent, message
 Requires at least: 5.2
 Tested up to: 5.5
 Requires PHP: 7.2
-Stable tag: 1.2
+Stable tag: 1.3
 License: GNU General Public License v3 or later
 License URI: /LICENCE
 
@@ -30,11 +30,17 @@ No!
 == Screenshots ==
 
 1. `/assets/screenshot-1.jpg`
-2. `/assets/screenshot-2.png`
+2. `/assets/screenshot-2.jpg`
+3. `/assets/screenshot-3.jpg`
 
 == Changelog ==
 
+= 1.3 =
+
+* Support to cookie lifetime
+
 = 1.2 =
+
 * Add option to cookie name
 * Add solar theme
 * Add aqua theme
@@ -42,29 +48,40 @@ No!
 * Add pt_BR lang
 
 = 1.0.3 =
+
 * Fix plugin text domain
 * Fix plugin slug
 * Fix plugin constants names
 
 = 1.0.2 =
+
 * Fix php warnings
 
 = 1.0 =
+
 * First plugin final version
 
 == Upgrade Notice ==
 
+= 1.3 =
+
+* Update to enable cookie lifetime support
+
 = 1.2 =
+
 * Support new themes
 * Support cookie custom name
 
 = 1.0.3 =
+
 * Fix plugin text domain
 * Fix plugin slug
 * Fix plugin constants names
 
 = 1.0.2 =
+
 * Fix php warnings
 
 = 1.0 =
+
 * First plugin final version

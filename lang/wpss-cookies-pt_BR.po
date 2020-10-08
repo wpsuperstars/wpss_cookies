@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPSS Cookies\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/support/plugin/cmb2\n"
-"POT-Creation-Date: 2020-10-07 22:14-0300\n"
-"PO-Revision-Date: 2020-10-07 22:24-0300\n"
+"POT-Creation-Date: 2020-10-08 19:35-0300\n"
+"PO-Revision-Date: 2020-10-08 19:35-0300\n"
 "Last-Translator: \n"
 "Language-Team: Angelo Rocha\n"
 "Language: pt_BR\n"
@@ -34,55 +34,71 @@ msgstr "Opções do Consentimento de Cookies"
 msgid "Edit Message"
 msgstr "Editar Mensagem"
 
-#: core/WPSSCookiesAdmin.php:73
+#: core/WPSSCookiesAdmin.php:74
 msgid "Update Settings"
 msgstr "Atualizar Opções"
 
-#: core/WPSSCookiesAdmin.php:99
+#: core/WPSSCookiesAdmin.php:101
 msgid "Stay in touch"
 msgstr "Fique em contato"
 
-#: core/WPSSCookiesAdmin.php:131
+#: core/WPSSCookiesAdmin.php:133
 msgid "Enable Cookie Consent"
 msgstr "Habilitar Consentimento de Cookies"
 
-#: core/WPSSCookiesAdmin.php:132
+#: core/WPSSCookiesAdmin.php:134
 msgid "Yes"
 msgstr "Sim"
 
-#: core/WPSSCookiesAdmin.php:133
+#: core/WPSSCookiesAdmin.php:135
 msgid "No"
 msgstr "Não"
 
-#: core/WPSSCookiesAdmin.php:147
+#: core/WPSSCookiesAdmin.php:149
 msgid "Message Position"
 msgstr "Posição da Mensagem"
 
-#: core/WPSSCookiesAdmin.php:148
+#: core/WPSSCookiesAdmin.php:150
 msgid "Top"
 msgstr "Topo"
 
-#: core/WPSSCookiesAdmin.php:149
+#: core/WPSSCookiesAdmin.php:151
 msgid "Bottom"
 msgstr "Baixo"
 
-#: core/WPSSCookiesAdmin.php:163
+#: core/WPSSCookiesAdmin.php:165
 msgid "Message Style"
 msgstr "Estilo da Mensagem"
 
-#: core/WPSSCookiesAdmin.php:193
+#: core/WPSSCookiesAdmin.php:195
 msgid "Button Label"
 msgstr "Texto do Botão"
 
-#: core/WPSSCookiesAdmin.php:205
+#: core/WPSSCookiesAdmin.php:207
 msgid "Cookie Name"
 msgstr "Nome do Cookie"
 
-#: core/WPSSCookiesAdmin.php:235
+#: core/WPSSCookiesAdmin.php:219
+msgid "Cookie Lifetime"
+msgstr "Tempo de vida do cookie"
+
+#: core/WPSSCookiesAdmin.php:220
+msgid "One Week"
+msgstr "Uma Semana"
+
+#: core/WPSSCookiesAdmin.php:221
+msgid "One Month"
+msgstr "Um Mês"
+
+#: core/WPSSCookiesAdmin.php:222
+msgid "One Year"
+msgstr "Um Ano"
+
+#: core/WPSSCookiesAdmin.php:255
 msgid "Accept"
 msgstr "Aceitar"
 
-#: core/WPSSCookiesAdmin.php:236
+#: core/WPSSCookiesAdmin.php:256
 msgid ""
 "We use cookies to provide our services and for analytics and marketing. To "
 "find out more about our use of cookies, please see our Privacy Policy. By "
