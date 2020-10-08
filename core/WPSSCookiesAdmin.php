@@ -11,7 +11,7 @@
  * Plugin Name:       WPSS Cookies
  * Plugin URI:        https://github.com/wpsuperstars/wpss_cookies
  * Description:       A simple way to add a cookie consent message in your WordPress
- * Version:           1.0.3
+ * Version:           1.2
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Angelo Rocha
@@ -28,7 +28,7 @@ final class WPSSCookiesAdmin{
         add_action('admin_init', array($this, 'wpss_register_plugin_settings'));
         add_action('wp_enqueue_scripts', array($this, 'wpss_plugin_scripts'));
         add_action('admin_enqueue_scripts', array($this, 'wpss_plugin_admin_scripts'));
-        add_action('init', array($this, 'wpss_load_plugin_textdomain'));
+        add_action('plugins_loaded', array($this, 'wpss_load_plugin_textdomain'));
     }
 
     /**
@@ -58,6 +58,7 @@ final class WPSSCookiesAdmin{
         settings_errors();
         echo "</div>";
         echo "<h1>$plugin_title</h1>";
+        self::wpss_admin_social_links();
         echo "<form method='post' action='options.php'>";
         settings_fields('wpss_cookie_options');
         do_settings_sections('wpss_cookie_options');
@@ -65,6 +66,7 @@ final class WPSSCookiesAdmin{
         self::wpss_message_position_field();
         self::wpss_message_style_field();
         self::wpss_message_button_field();
+        self::wpss_cookie_name();
         echo "<label for='wpss_cookie_message'>$message_label</label>";
         wp_editor(get_option('wpss_cookie_message'), 'wpss_cookie_message', $editor_settings);
 
@@ -82,10 +84,29 @@ final class WPSSCookiesAdmin{
         register_setting('wpss_cookie_options', 'wpss_message_position', self::wpss_sanitize_fields());
         register_setting('wpss_cookie_options', 'wpss_message_style', self::wpss_sanitize_fields());
         register_setting('wpss_cookie_options', 'wpss_button_text', self::wpss_sanitize_fields());
+        register_setting('wpss_cookie_options', 'wpss_cookie_name', self::wpss_sanitize_fields());
         register_setting('wpss_cookie_options', 'wpss_cookie_message', self::wpss_sanitize_fields(
             'string',
             'wp_kses_post'
         ));
+    }
+
+    /**
+     * Plugin social links
+     */
+    public function wpss_admin_social_links(){
+        echo "<div class='wpss-social-links'>";
+        $stay_in_touch = __('Stay in touch', 'wpss-cookies');
+        $facebook      = "https://web.facebook.com/angelorochawp/";
+        $instagram     = "https://www.instagram.com/angelorocha.wp/";
+        $linkedin      = "https://br.linkedin.com/in/angelorocha";
+        $github        = "https://github.com/angelorocha/";
+        echo "<ul><li><strong>$stay_in_touch: </strong></li>";
+        echo "<li class='facebook'><a href='$facebook' title='Facebook' target='_blank'>Facebook</a></li>";
+        echo "<li class='instagram'><a href='$instagram' title='Instagram' target='_blank'>Instagram</a></li>";
+        echo "<li class='linkedin'><a href='$linkedin' title='Linkedin' target='_blank'>Linkedin</a></li>";
+        echo "<li class='github'><a href='$github' title='Github' target='_blank'>Github</a></li></li>";
+        echo "</div>";
     }
 
     /**
@@ -139,10 +160,13 @@ final class WPSSCookiesAdmin{
      * Message style field
      */
     public function wpss_message_style_field(){
-        $style_label = __('Message Style', 'wpss');
+        $style_label = __('Message Style', 'wpss-cookies');
         $ocean_op    = WPSS_COOKIES_PLUGIN_URL . "assets/images/ocean_op.png";
         $light_op    = WPSS_COOKIES_PLUGIN_URL . "assets/images/light_op.png";
         $forest_op   = WPSS_COOKIES_PLUGIN_URL . "assets/images/forest_op.png";
+        $solar_op    = WPSS_COOKIES_PLUGIN_URL . "assets/images/solar_op.png";
+        $aqua_op     = WPSS_COOKIES_PLUGIN_URL . "assets/images/aqua_op.png";
+        $midnight_op = WPSS_COOKIES_PLUGIN_URL . "assets/images/midnight_op.png";
         echo "<div class='wpss-input-group'>";
         echo "<h3>$style_label</h3>";
         echo "<div class='wpss-radio-image-inline'>";
@@ -152,6 +176,12 @@ final class WPSSCookiesAdmin{
         echo "<input type='radio' name='wpss_message_style' id='wpss_message_style_light' value='wpss_light'" . self::wpss_radio_checked('wpss_light', 'wpss_message_style') . "> Light<img src='$light_op'></label>";
         echo "<label for='wpss_message_style_forest'>";
         echo "<input type='radio' name='wpss_message_style' id='wpss_message_style_forest' value='wpss_forest'" . self::wpss_radio_checked('wpss_forest', 'wpss_message_style') . "> Forest<img src='$forest_op'></label>";
+        echo "<label for='wpss_message_style_solar'>";
+        echo "<input type='radio' name='wpss_message_style' id='wpss_message_style_solar' value='wpss_solar'" . self::wpss_radio_checked('wpss_solar', 'wpss_message_style') . "> Solar<img src='$solar_op'></label>";
+        echo "<label for='wpss_message_style_aqua'>";
+        echo "<input type='radio' name='wpss_message_style' id='wpss_message_style_aqua' value='wpss_aqua'" . self::wpss_radio_checked('wpss_aqua', 'wpss_message_style') . "> Aqua<img src='$aqua_op'></label>";
+        echo "<label for='wpss_message_style_midnight'>";
+        echo "<input type='radio' name='wpss_message_style' id='wpss_message_style_midnight' value='wpss_midnight'" . self::wpss_radio_checked('wpss_midnight', 'wpss_message_style') . "> Midnight<img src='$midnight_op'></label>";
         echo "</div>";
         echo "</div>";
     }
@@ -165,6 +195,21 @@ final class WPSSCookiesAdmin{
         echo "<div class='wpss-input-group'>";
         echo "<label for='wpss_button_text'><h3>$button_label</h3></label>";
         echo "<input type='text' name='wpss_button_text' id='wpss_button_text' value='$button_text'>";
+        echo "</div>";
+    }
+
+    /**
+     * Button text field
+     */
+    public function wpss_cookie_name(){
+        $label       = __('Cookie Name', 'wpss-cookies');
+        $cookie_name = get_option('wpss_cookie_name');
+        if(!$cookie_name):
+            $cookie_name = "wpss_cookie_accepted";
+        endif;
+        echo "<div class='wpss-input-group'>";
+        echo "<label for='wpss_cookie_name'><h3>$label</h3></label>";
+        echo "<input type='text' name='wpss_cookie_name' id='wpss_cookie_name' value='$cookie_name'>";
         echo "</div>";
     }
 
@@ -193,6 +238,7 @@ final class WPSSCookiesAdmin{
         add_option('wpss_message_position', 'bottom');
         add_option('wpss_message_style', 'wpss_ocean');
         add_option('wpss_button_text', $accept);
+        add_option('wpss_cookie_name', 'wpss_cookie_accepted');
         add_option('wpss_cookie_message', $message);
     }
 
@@ -204,6 +250,7 @@ final class WPSSCookiesAdmin{
         delete_option('wpss_message_position');
         delete_option('wpss_message_style');
         delete_option('wpss_button_text');
+        delete_option('wpss_cookie_name');
         delete_option('wpss_cookie_message');
     }
 
@@ -211,7 +258,7 @@ final class WPSSCookiesAdmin{
      * Plugin internationalization
      */
     public function wpss_load_plugin_textdomain(){
-        load_plugin_textdomain('wpss', false, WPSS_COOKIES_PLUGIN_DIR . 'lang');
+        load_plugin_textdomain('wpss-cookies', false, WPSS_COOKIES_PLUGIN_DIR . '/lang/');
     }
 
     /**

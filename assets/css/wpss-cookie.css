@@ -39,6 +39,7 @@
     text-transform: uppercase;
     border: 0;
     transition: 300ms;
+    color: #FFF;
 }
 
 .wpss-cookie-message.wpss_ocean {
@@ -48,7 +49,6 @@
 }
 .wpss-cookie-message.wpss_ocean .wpss-button-accept {
     background-color: #403F4C;
-    color: #FFF;
 }
 
 .wpss-cookie-message.wpss_light {
@@ -58,7 +58,6 @@
 }
 .wpss-cookie-message.wpss_light .wpss-button-accept {
     background-color: #01BAEF;
-    color: #FFF;
 }
 
 .wpss-cookie-message.wpss_forest {
@@ -68,7 +67,33 @@
 }
 .wpss-cookie-message.wpss_forest .wpss-button-accept {
     background-color: #266447;
-    color: #FFF;
+}
+
+.wpss-cookie-message.wpss_solar {
+    background-color: #FFFFBF;
+    color: #8C6800;
+    border-color: #8C6900;
+}
+.wpss-cookie-message.wpss_solar .wpss-button-accept {
+    background-color: #8C6800;
+}
+
+.wpss-cookie-message.wpss_aqua {
+    background-color: #BFEFFF;
+    color: #00A3D8;
+    border-color: #73B9FF;
+}
+.wpss-cookie-message.wpss_aqua .wpss-button-accept {
+    background-color: #73B9FF;
+}
+
+.wpss-cookie-message.wpss_midnight {
+    background-color: #444;
+    color: #CCC;
+    border-color: #000;
+}
+.wpss-cookie-message.wpss_midnight .wpss-button-accept {
+    background-color: #000;
 }
 
 .wpss-cookie-message .wpss-button-accept:hover,
@@ -90,11 +115,11 @@
     border-top-style: solid;
 }
 
-.wpss-hide-message{
+.wpss-hide-message {
     display: none;
 }
 
-.wpss-loading-btn{
+.wpss-loading-btn {
     background: url("../images/load.png") 0.5rem center no-repeat;
 }
 

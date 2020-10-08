@@ -1,11 +1,11 @@
 === WPSS Cookies ===
 Contributors: angelorocha
 Donate link: https://github.com/angelorocha/superstar
-Tags: cookies, cookie, consent cookie, cookie message
+Tags: cookies, cookie, gdpr, ccpa, consent-cookie, cookie-message, accept-cookies
 Requires at least: 5.2
 Tested up to: 5.5
 Requires PHP: 7.2
-Stable tag: 1.0.3
+Stable tag: 1.2
 License: GNU General Public License v3 or later
 License URI: /LICENCE
 
@@ -13,7 +13,9 @@ A simple way to add a cookie consent message in your WordPress
 
 == Description ==
 
-![alt WordPress Cookie Consent Plugin](assets/images/plugin_logo.jpg)
+Simple, but very functional, cookie consent plugin.
+
+`/assets/plugin-presentation.jpg`
 
 == Installation ==
 1. Upload plugin folder to the `/wp-content/plugins/` directory
@@ -27,10 +29,16 @@ No!
 
 == Screenshots ==
 
-1. `/assets/screenshot-1.jpg`
-2. `/assets/screenshot-1.jpg`
+1. `/assets/screenshot.png`
 
 == Changelog ==
+
+= 1.2
+* Add option to cookie name
+* Add solar theme
+* Add aqua theme
+* Add midnight theme
+* Add pt_BR lang
 
 = 1.0.3
 * Fix plugin text domain
@@ -44,6 +52,10 @@ No!
 * First plugin final version
 
 == Upgrade Notice ==
+
+= 1.2
+* Support new themes
+* Support cookie custom name
 
 = 1.0.3
 * Fix plugin text domain
