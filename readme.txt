@@ -15,9 +15,9 @@ A simple way to add a cookie consent message in your WordPress
 
 Simple, but very functional, cookie consent plugin.
 
-`/assets/plugin-presentation.jpg`
-
 == Installation ==
+
+Is easy:
 1. Upload plugin folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 3. Enjoy
@@ -29,40 +29,41 @@ No!
 
 == Screenshots ==
 
-1. `/assets/screenshot.png`
+1. `/assets/screenshot-1.jpg`
+2. `/assets/screenshot-2.png`
 
 == Changelog ==
 
-= 1.2
+= 1.2 =
 * Add option to cookie name
 * Add solar theme
 * Add aqua theme
 * Add midnight theme
 * Add pt_BR lang
 
-= 1.0.3
+= 1.0.3 =
 * Fix plugin text domain
 * Fix plugin slug
 * Fix plugin constants names
 
-= 1.0.2
+= 1.0.2 =
 * Fix php warnings
 
-= 1.0
+= 1.0 =
 * First plugin final version
 
 == Upgrade Notice ==
 
-= 1.2
+= 1.2 =
 * Support new themes
 * Support cookie custom name
 
-= 1.0.3
+= 1.0.3 =
 * Fix plugin text domain
 * Fix plugin slug
 * Fix plugin constants names
 
-= 1.0.2
+= 1.0.2 =
 * Fix php warnings
 
 = 1.0 =
