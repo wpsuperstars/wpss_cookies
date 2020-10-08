@@ -36,11 +36,9 @@ No!
 == Changelog ==
 
 = 1.3 =
-
 * Support to cookie lifetime
 
 = 1.2 =
-
 * Add option to cookie name
 * Add solar theme
 * Add aqua theme
@@ -48,40 +46,32 @@ No!
 * Add pt_BR lang
 
 = 1.0.3 =
-
 * Fix plugin text domain
 * Fix plugin slug
 * Fix plugin constants names
 
 = 1.0.2 =
-
 * Fix php warnings
 
 = 1.0 =
-
 * First plugin final version
 
 == Upgrade Notice ==
 
 = 1.3 =
-
 * Update to enable cookie lifetime support
 
 = 1.2 =
-
 * Support new themes
 * Support cookie custom name
 
 = 1.0.3 =
-
 * Fix plugin text domain
 * Fix plugin slug
 * Fix plugin constants names
 
 = 1.0.2 =
-
 * Fix php warnings
 
 = 1.0 =
-
 * First plugin final version

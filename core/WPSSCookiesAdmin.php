@@ -26,7 +26,6 @@ final class WPSSCookiesAdmin{
     public function __construct(){
         add_action('admin_menu', array($this, 'wpss_plugin_menu_page'));
         add_action('admin_init', array($this, 'wpss_register_plugin_settings'));
-        add_action('wp_enqueue_scripts', array($this, 'wpss_plugin_scripts'));
         add_action('admin_enqueue_scripts', array($this, 'wpss_plugin_admin_scripts'));
         add_action('plugins_loaded', array($this, 'wpss_load_plugin_textdomain'));
     }

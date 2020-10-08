@@ -27,12 +27,10 @@ define("WPSS_COOKIES_PLUGIN_VERSION", 20201007);
 
 // Admin Class
 if(!class_exists('WPSSCookiesAdmin')){
-    if(is_admin()){
-        require_once 'core/WPSSCookiesAdmin.php';
-        $wpss_cookie_admin = new WPSSCookiesAdmin();
-        register_activation_hook(__FILE__, array('WPSSCookiesAdmin', 'wpss_on_plugin_activate'));
-        register_deactivation_hook(__FILE__, array('WPSSCookiesAdmin', 'wpss_on_plugin_deactivate'));
-    }
+    require_once 'core/WPSSCookiesAdmin.php';
+    $wpss_cookie_admin = new WPSSCookiesAdmin();
+    register_activation_hook(__FILE__, array('WPSSCookiesAdmin', 'wpss_on_plugin_activate'));
+    register_deactivation_hook(__FILE__, array('WPSSCookiesAdmin', 'wpss_on_plugin_deactivate'));
 }
 
 // Frontend Class
